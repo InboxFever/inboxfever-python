@@ -1,0 +1,59 @@
+
+// POST request on a new email to developer's endpoint
+{
+    "updated": "234908570069",
+    "created": "234809890234",
+    "thread_id": "b2daa282bf2c02078e6fc2ab68d17ea98f7b9d04",
+    "email_id": "8ed57398a6b5a619bf2d6a9764c397f93fcb1127",
+    "from": {
+       "name": "",
+       "address": "dthompson@gmail.com",
+       "params":null
+    },
+    "reply_to": "dropbox@dev.inboxfever.com",  // your app settings for email addrees (if diff from inboxfever address)
+    "to": {
+        "name": "",
+        "address": "dropbox@dev.inboxfever.com",
+        "params": null,
+    },
+    "cc_list":[{}], // - coming
+    "to_list":[{}], // - coming
+    "headers": {"":[],"":[]},
+    "attachments": ["http://staticstoage.co/dthompson@gmail.com/3964977730/guy_on_buffalo.png"],
+    "text": "attachment\n\n-- \n_Mick\n",
+    "html": "attachment<br clear=\"all\"><div><br></div>-- <br>_Mick<br>\n",
+    "subject": "test"
+    "request_id":"some kind of id"  // this can be used to track the status of the response.
+}
+
+// Outgoing Email
+
+{
+    "to":[["Mick","email@address.com"], ],  OR ["list", "of", "addresses"]
+    //"cc" - coming
+    //"bcc" - coming
+    "secret":"",
+    "thread_id":"", //optional, this will be assigned if not provided
+    "template": "result",
+    "app_id": 124334562345,
+    "reply_to": "yelp@inboxfever.com",
+    "attachments": [],
+    "context": {
+        "term": "beer",
+        "location": "boulder",
+        "whatever": "beer"
+    },
+    "subject": "boulder beer"
+}
+
+
+// Feedback - Error, events, etc
+// not yet.
+
+{
+    "type": "Error",
+    "message": "There was a terrible error",
+    "smtp_error": "code + message",
+   
+
+}
