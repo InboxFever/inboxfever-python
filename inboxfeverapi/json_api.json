@@ -43,6 +43,8 @@
         "location": "boulder",
         "whatever": "beer"
     },
+    "text": "attachment\n\n-- \n_Mick\n",
+    "html": "attachment<br clear=\"all\"><div><br></div>-- <br>_Mick<br>\n",
     "subject": "boulder beer"
 }
 
