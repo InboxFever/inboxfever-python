@@ -210,8 +210,11 @@ class Email(InboxFeverObject):
 
 class Email_Address(InboxFeverObject):
     def __init__(self, d):
-        if not d:
+        if d is None:
             d = {}
+        elif isinstance(d, Email_Address):
+            d = d.toDict()
+                
         try:
             self.name = d.get('name')
             self.address = d.get('address')
@@ -220,3 +223,4 @@ class Email_Address(InboxFeverObject):
             logger.error('Got exception on Email_Address init: \n%s\n%s\n%s\n%s\n', d, sys.exc_info()[0],sys.exc_info()[1],''.join(format_tb(sys.exc_info()[2])), )
     def toDict(self):
         return self.__dict__
+    
