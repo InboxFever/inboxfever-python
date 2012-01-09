@@ -1,5 +1,8 @@
 import sys, hashlib
-from simplejson import loads, dumps
+
+try: from simplejson import loads, dumps
+except ImportError: from json import loads, dumps
+
 from traceback import format_tb
 import urllib2
 
@@ -34,7 +37,7 @@ class InboxFever():
         try:
             result = urllib2.urlopen(api_endpoint, data=email.getJSON())
         except Exception, e:
-             print "Error: %s" % str(e)
+            logging.error( "Error: %s email_data=%s endpoint: %s",  str(e), email.getJSON(), api_endpoint )
 
     def isRequestValid(self, headers, request_body):
 
